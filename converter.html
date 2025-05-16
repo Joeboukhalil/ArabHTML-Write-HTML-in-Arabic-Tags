@@ -67,14 +67,14 @@
     <h2>تحويل الكود من عربHTML إلى HTML إنجليزي</h2>
     
     <label for="arabInput">كود عربHTML:</label>
-    <textarea id="arabInput" placeholder="اكتب الكود بالعربية هنا..."></textarea>
+    <textarea id="arabInput" placeholder="اكتب الكود بالعربية هنا..." dir="rtl" style="text-align: right;"></textarea>
     
     <button onclick="convertArabicHTML()">تحويل إلى HTML إنجليزي</button>
     <button onclick="copyResult()">نسخ الكود</button>
     <a href="index.html"><button>الرجوع للمحرر الرئيسي</button></a>
 
     <label for="convertedOutput">الكود المحول:</label>
-    <textarea id="convertedOutput" readonly placeholder="سيظهر الكود المحول هنا..."></textarea>
+    <textarea id="convertedOutput" readonly dir="ltr" style="text-align: left;" placeholder="Converted English HTML will appear here..."></textarea>
   </div>
 
   <div class="reference-container">

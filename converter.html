@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>محوّل لغة HTML العربية</title>
+  <style>
+    body { font-family: sans-serif; direction: rtl; background: #f9f9f9; padding: 20px; }
+    textarea { width: 100%; height: 200px; margin-bottom: 10px; direction: rtl; }
+    .output { direction: ltr; background: #fff; padding: 10px; border: 1px solid #ccc; white-space: pre-wrap; height: 200px; overflow-y: auto; }
+    button { background: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 5px; margin: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background: #eee; }
+  </style>
+</head>
+<body>
+  <h2>محوّل HTML باللغة العربية (نسخة تجريبية غير قياسية)</h2>
+  <p>هذا المشروع يتيح لك كتابة كود HTML باستخدام كلمات عربية مكافئة للوسوم القياسية. هذا ليس معياراً معترفاً به من قبل W3C أو أي منظمة رسمية.</p>  <textarea id="arabicCode" placeholder="اكتب الكود العربي هنا..."></textarea><button onclick="convertCode()">تحويل</button> <button onclick="copyOutput()">نسخ الكود</button> <a href="index.html"><button>العودة للصفحة الرئيسية</button></a>
+
+  <div id="output" class="output"></div>  <h3>الرموز المستخدمة:</h3>
+  <table>
+    <tr><th>عربي</th><th>HTML</th></tr>
+    <tr><td>صفحة</td><td>html</td></tr>
+    <tr><td>رأس</td><td>head</td></tr>
+    <tr><td>عنوان</td><td>title</td></tr>
+    <tr><td>جسم</td><td>body</td></tr>
+    <tr><td>مقطع</td><td>p</td></tr>
+    <tr><td>رابط</td><td>a</td></tr>
+    <tr><td>زر</td><td>button</td></tr>
+    <tr><td>صورة</td><td>img</td></tr>
+    <tr><td>قائمة</td><td>ul</td></tr>
+    <tr><td>عنصر</td><td>li</td></tr>
+    <tr><td>رأس1</td><td>h1</td></tr>
+    <tr><td>رأس2</td><td>h2</td></tr>
+    <tr><td>رأس3</td><td>h3</td></tr>
+    <tr><td>جدول</td><td>table</td></tr>
+    <tr><td>صف</td><td>tr</td></tr>
+    <tr><td>رأس_خلية</td><td>th</td></tr>
+    <tr><td>خلية</td><td>td</td></tr>
+    <tr><td>رابط_نصي</td><td>link</td></tr>
+    <tr><td>نص_بيانات</td><td>meta</td></tr>
+    <tr><td>نص_غامق</td><td>b</td></tr>
+    <tr><td>نص_مائل</td><td>i</td></tr>
+    <tr><td>مدخل</td><td>input</td></tr>
+    <tr><td>نموذج</td><td>form</td></tr>
+  </table>  <script>
+    const arabicToHTML = {
+      "صفحة": "html",
+      "رأس": "head",
+      "عنوان": "title",
+      "جسم": "body",
+      "مقطع": "p",
+      "رابط": "a",
+      "زر": "button",
+      "صورة": "img",
+      "قائمة": "ul",
+      "عنصر": "li",
+      "رأس1": "h1",
+      "رأس2": "h2",
+      "رأس3": "h3",
+      "جدول": "table",
+      "صف": "tr",
+      "رأس_خلية": "th",
+      "خلية": "td",
+      "رابط_نصي": "link",
+      "نص_بيانات": "meta",
+      "نص_غامق": "b",
+      "نص_مائل": "i",
+      "مدخل": "input",
+      "نموذج": "form"
+    };
+
+    function convertCode() {
+      let code = document.getElementById('arabicCode').value;
+      for (const arabic in arabicToHTML) {
+        const html = arabicToHTML[arabic];
+        const regexOpen = new RegExp(`<${arabic}>`, 'g');
+        const regexClose = new RegExp(`</${arabic}>`, 'g');
+        code = code.replace(regexOpen, `<${html}>`).replace(regexClose, `</${html}>`);
+      }
+      document.getElementById('output').textContent = code;
+    }
+
+    function copyOutput() {
+      const text = document.getElementById('output').textContent;
+      navigator.clipboard.writeText(text).then(() => alert('تم نسخ الكود!'));
+    }
+  </script></body>
+</html>

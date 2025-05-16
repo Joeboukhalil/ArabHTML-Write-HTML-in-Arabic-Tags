@@ -10,8 +10,9 @@
 
 Instead of writing:
 
-```html
+html
 <p>مرحبًا بالعالم</p>
+
 
 You can write:
 
@@ -21,7 +22,7 @@ And our converter will turn it into valid HTML:
 
 <p>مرحبًا بالعالم</p>
 
-**Why Use عربHTML?**
+## Why Use عربHTML?
 
 - Accessibility: Makes it easier for beginners or native Arabic speakers to understand the structure and purpose of HTML tags.
 
@@ -30,7 +31,7 @@ And our converter will turn it into valid HTML:
 - Customization: Serves as a fun and functional way to experiment with the logic of markup languages.
 
 
-**How It Works**
+## How It Works
 
 1. You write code in Arabic-style tags using our web editor.
 
@@ -42,7 +43,7 @@ And our converter will turn it into valid HTML:
 
 
 
-**Legal & Licensing**
+## Legal & Licensing
 
 This project is:
 
@@ -57,11 +58,11 @@ You are free to use, modify, and share this project under the terms of the MIT L
 
 
 
-Contribute
+## Contribute
 
 Want to help improve عربHTML or add new features?
 Pull requests, ideas, and suggestions are always welcome!
 
-Credits
+## Credits
 
 Created with love and learning in mind to make web development more approachable for Arabic-speaking communities.
